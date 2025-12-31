@@ -1,0 +1,1 @@
+{"version":"1.0.0","model":"kokoro_event265.moc","textures":["texture_00.png","texture_01.png"],"physics":"kokoro_event265.physics.json","motions":{"start":[{"file":"motion/gacha01.mtn"}],"idle":[]}}

@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>专栏分类 | HoanMeirin&#39;s Blog</title>
+  <meta name="description" content="什么都会一点">
+  <meta name="keywords" content="技术,博客">
+  <meta name="author" content="HoanMeirin">
+  
+  <!-- CSS -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
+  
+  <!-- KaTeX JavaScript -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 8.1.1"></head>
+<body>
+  <!-- Header -->
+  <header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="logo">
+        <h1>HoanMeirin&#39;s Blog</h1>
+      </div>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        
+          <a href="/" class="nav-link">首页</a>
+        
+          <a href="/categories/" class="nav-link">专栏</a>
+        
+          <a href="/archives/" class="nav-link">文章</a>
+        
+          <a href="/tags/" class="nav-link">标签</a>
+        
+          <a href="/about/" class="nav-link">关于</a>
+        
+      </nav>
+      
+      <!-- Search and Tools -->
+      <div class="header-tools">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+        <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+        <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="nav">
+        
+          <a href="/" class="nav-link">首页</a>
+        
+          <a href="/categories/" class="nav-link">专栏</a>
+        
+          <a href="/archives/" class="nav-link">文章</a>
+        
+          <a href="/tags/" class="nav-link">标签</a>
+        
+          <a href="/about/" class="nav-link">关于</a>
+        
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('active');
+}
+
+// 点击外部关闭菜单
+document.addEventListener('click', function(event) {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuToggle = document.querySelector('.menu-toggle');
+  
+  if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+    mobileMenu.classList.remove('active');
+  }
+});
+</script>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="categories-container">
+  <div class="categories-header">
+    <h1 class="categories-title">
+      <i class="fas fa-book"></i>
+      专栏分类
+    </h1>
+    <p class="categories-desc">按专栏浏览所有文章，每个专栏汇集相关主题的优质内容</p>
+  </div>
+
+  <div class="categories-grid">
+    
+      <div class="category-card">
+        <div class="category-header-section">
+          <div class="category-icon">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">数电</h3>
+            <p class="category-count">1 篇文章</p>
+          </div>
+        </div>
+        
+        <div class="category-posts-list">
+          
+            <div class="post-item">
+              <a href="/2025/12/19/%E5%8E%9F%E7%A0%81%E5%8A%A0%E6%B3%95%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1/" class="post-link">
+                <div class="post-item-header">
+                  <span class="post-title">原码加法器表达式设计</span>
+                  <span class="post-date">12-19</span>
+                </div>
+                
+                  <div class="post-tags">
+                    
+                      <span class="tag">数电</span>
+                    
+                  </div>
+                
+              </a>
+            </div>
+          
+        </div>
+        
+        <div class="category-footer">
+          <a href="/categories/%E6%95%B0%E7%94%B5/" class="view-all-btn">
+            查看全部 <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    
+      <div class="category-card">
+        <div class="category-header-section">
+          <div class="category-icon">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">IDE</h3>
+            <p class="category-count">1 篇文章</p>
+          </div>
+        </div>
+        
+        <div class="category-posts-list">
+          
+            <div class="post-item">
+              <a href="/2025/12/27/kiro%E4%BD%BF%E7%94%A8wsl%E7%BB%88%E7%AB%AF%E6%95%99%E7%A8%8B/" class="post-link">
+                <div class="post-item-header">
+                  <span class="post-title">kiro使用WSL终端教程</span>
+                  <span class="post-date">12-27</span>
+                </div>
+                
+                  <div class="post-tags">
+                    
+                      <span class="tag">WSL</span>
+                    
+                      <span class="tag">IDE</span>
+                    
+                  </div>
+                
+              </a>
+            </div>
+          
+        </div>
+        
+        <div class="category-footer">
+          <a href="/categories/IDE/" class="view-all-btn">
+            查看全部 <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    
+      <div class="category-card">
+        <div class="category-header-section">
+          <div class="category-icon">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">kiro</h3>
+            <p class="category-count">1 篇文章</p>
+          </div>
+        </div>
+        
+        <div class="category-posts-list">
+          
+            <div class="post-item">
+              <a href="/2025/12/27/kiro%E4%BD%BF%E7%94%A8wsl%E7%BB%88%E7%AB%AF%E6%95%99%E7%A8%8B/" class="post-link">
+                <div class="post-item-header">
+                  <span class="post-title">kiro使用WSL终端教程</span>
+                  <span class="post-date">12-27</span>
+                </div>
+                
+                  <div class="post-tags">
+                    
+                      <span class="tag">WSL</span>
+                    
+                      <span class="tag">IDE</span>
+                    
+                  </div>
+                
+              </a>
+            </div>
+          
+        </div>
+        
+        <div class="category-footer">
+          <a href="/categories/IDE/kiro/" class="view-all-btn">
+            查看全部 <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    
+      <div class="category-card">
+        <div class="category-header-section">
+          <div class="category-icon">
+            <i class="fas fa-folder"></i>
+          </div>
+          <div class="category-info">
+            <h3 class="category-name">WSL</h3>
+            <p class="category-count">1 篇文章</p>
+          </div>
+        </div>
+        
+        <div class="category-posts-list">
+          
+            <div class="post-item">
+              <a href="/2025/12/27/kiro%E4%BD%BF%E7%94%A8wsl%E7%BB%88%E7%AB%AF%E6%95%99%E7%A8%8B/" class="post-link">
+                <div class="post-item-header">
+                  <span class="post-title">kiro使用WSL终端教程</span>
+                  <span class="post-date">12-27</span>
+                </div>
+                
+                  <div class="post-tags">
+                    
+                      <span class="tag">WSL</span>
+                    
+                      <span class="tag">IDE</span>
+                    
+                  </div>
+                
+              </a>
+            </div>
+          
+        </div>
+        
+        <div class="category-footer">
+          <a href="/categories/IDE/kiro/WSL/" class="view-all-btn">
+            查看全部 <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    
+  </div>
+  
+  
+</div>
+
+<style>
+.categories-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.categories-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.categories-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.categories-title i {
+  color: #2563eb;
+}
+
+.categories-desc {
+  color: #64748b;
+  font-size: 1.1rem;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.category-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+}
+
+.category-header-section {
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  border-bottom: 1px solid #f1f5f9;
+  gap: 1.5rem;
+}
+
+.category-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1);
+}
+
+.category-info {
+  flex: 1;
+}
+
+.category-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.category-count {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.category-posts-list {
+  flex: 1;
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.post-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.post-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: all 0.3s;
+}
+
+.post-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  flex: 1;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.4;
+  transition: color 0.3s;
+}
+
+.post-link:hover .post-title {
+  color: #2563eb;
+}
+
+.post-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.post-tags .tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #f0f4f8;
+  color: #2563eb;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.post-link:hover .post-tags .tag {
+  background: #e0f2fe;
+}
+
+.category-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid #f1f5f9;
+  text-align: center;
+}
+
+.view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #2563eb;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.view-all-btn:hover {
+  background: #2563eb;
+  color: white;
+  transform: translateX(3px);
+}
+
+.view-all-btn i {
+  transition: transform 0.3s;
+}
+
+.view-all-btn:hover i {
+  transform: translateX(2px);
+}
+
+.empty-categories {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #64748b;
+}
+
+.empty-categories i {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: #cbd5e1;
+}
+
+.empty-categories h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #475569;
+}
+
+@media (max-width: 768px) {
+  .categories-container {
+    padding: 1rem;
+  }
+  
+  .categories-title {
+    font-size: 2rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .category-header-section {
+    padding: 1.5rem;
+  }
+  
+  .category-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+  
+  .category-posts-list {
+    padding: 1rem 1.5rem;
+    max-height: 300px;
+  }
+  
+  .category-footer {
+    padding: 1rem 1.5rem;
+  }
+}
+</style>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2025 HoanMeirin. All rights reserved.</p>
+      <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></p>
+    </div>
+  </div>
+</footer>
+  
+  <!-- Live2D -->
+  
+    <div id="live2d-widget" style="position: fixed; bottom: 0; right: 20px; z-index: 999; pointer-events: none; overflow: visible;">
+      <canvas id="live2dcanvas" width="450" height="600"></canvas>
+    </div>
+  
+  
+  <!-- Scripts -->
+  
+<script src="/js/script.js"></script>
+
+  
+<script src="/js/live2d-controller-working.js"></script>
+
+  
+<script src="/js/live2d-mobile.js"></script>
+
+  
+<script src="/js/live2d-hotkeys.js"></script>
+
+  
+  <!-- Live2D Scripts -->
+  
+    
+      <!-- 使用本地Live2D模型 -->
+      <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+      <script>
+        console.log('🎭 初始化本地Live2D模型...');
+        
+        // 从localStorage获取保存的模型，或使用默认模型
+        function getCurrentModel() {
+          const saved = localStorage.getItem('live2d-current-model');
+          return saved || 'anon_2151';
+        }
+        
+        // 获取正确的模型路径
+        function getModelPath(modelName) {
+          const modelPaths = {
+            'anon_2151': '/live2d/bang/anon_2151/model.json',
+            'hina_1387': '/live2d/bang/hina_1387/model.json',
+            'kkr_265': '/live2d/bang/kkr_265/model.json',
+            'ksm_270': '/live2d/bang/ksm_270/model.json',
+            'ksm_271': '/live2d/bang/ksm_271/model.json',
+            'mzm': '/live2d/bang/mzm/model.json',
+            'nidie': '/live2d/bang/nidie/model.json',
+            'tomorin': '/live2d/bang/tomorin/model.json'
+          };
+          return modelPaths[modelName] || modelPaths['anon_2151'];
+        }
+        
+        // 加载配置文件
+        function loadConfigFile() {
+          try {
+            const saved = localStorage.getItem('live2d-config');
+            if (saved) {
+              return JSON.parse(saved);
+            }
+          } catch (e) {
+            console.warn('加载Live2D配置失败:', e);
+          }
+          return null;
+        }
+        
+        const currentModel = getCurrentModel();
+        const modelPath = getModelPath(currentModel);
+        console.log('📍 当前模型:', currentModel);
+        console.log('📍 模型路径:', modelPath);
+        
+        L2Dwidget.init({
+          "model": {
+            "jsonPath": modelPath,
+            "scale": 1
+          },
+          "display": {
+            "position": "right",
+            "width": 450,
+            "height": 600,
+            "hOffset": 0,
+            "vOffset": -60
+          },
+          "mobile": {
+            "show": true,
+            "scale": 0.5
+          },
+          "react": {
+            "opacity": 1.0,
+            "opacityOnHover": 0.2
+          },
+          "dialog": {
+            "enable": false
+          },
+          "log": false
+        });
+        
+        // 调试信息
+        console.log('📍 Live2D模型路径:', modelPath);
+        
+        // 测试模型文件是否可访问
+        fetch(modelPath)
+          .then(response => {
+            if (response.ok) {
+              console.log('✅ 模型配置文件加载成功');
+              return response.json();
+            } else {
+              console.error('❌ 模型配置文件加载失败:', response.status);
+              throw new Error('配置文件不存在');
+            }
+          })
+          .then(data => {
+            console.log('📋 模型配置:', data);
+          })
+          .catch(error => {
+            console.error('🚨 Live2D加载错误:', error);
+          });
+      </script>
+    
+  
+  
+  <!-- KaTeX Auto-render -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$', right: '$', display: true},
+          {left: '$$', right: '$$', display: false},
+          {left: '\\[', right: '\\]', display: true},
+          {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError: false
+      });
+      console.log('✅ KaTeX rendering complete');
+    });
+  </script>
+</body>
+</html>

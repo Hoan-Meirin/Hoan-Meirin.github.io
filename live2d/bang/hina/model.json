@@ -1,0 +1,1 @@
+{"version":"1.0.0","model":"hina_event174.moc","textures":["texture_00.png"],"physics":"hina_event174.physics.json","motions":{"start":[{"file":"motions/eeto01.mtn"}],"tap":[{"file":"motions/smile05.mtn"}],"idle":[{"file":"motions/smile03.mtn"},{"file":"motions/oowarai01.mtn"},{"file":"motions/smile01.mtn"}],"leave_":[{"file":"motions/smile05.mtn"}]}}

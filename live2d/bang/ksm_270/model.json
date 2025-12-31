@@ -1,0 +1,1 @@
+{"version":"1.0.0","model":"kasumi_event270.moc","textures":["texture_00.png","texture_01.png"],"physics":"kasumi_event270.physics.json","motions":{"start":[{"file":"mtn/gacha01.mtn"}],"idle":[{"file":"mtn/eeto01.mtn"},{"file":"mtn/smile01.mtn"},{"file":"mtn/wink01.mtn"}]}}

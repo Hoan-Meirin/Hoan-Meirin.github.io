@@ -1,0 +1,1 @@
+{"version":"1.0.0","model":"anon_other-202504.moc","textures":["texture_00.png","texture_01.png"],"physics":"anon_other-202504.physics.json","motions":{"tap":[{"file":"mtn/smile01.mtn"}],"idle":[{"file":"mtn/thinking01.mtn"},{"file":"mtn/kandou01.mtn"}]}}

@@ -1,207 +1,474 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HoanMeirin&#39;s Blog</title>
+  <meta name="description" content="什么都会一点">
+  <meta name="keywords" content="技术,博客">
+  <meta name="author" content="HoanMeirin">
   
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+  <!-- CSS -->
   
 <link rel="stylesheet" href="/css/style.css">
 
   
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" integrity="sha384-GvrOXuhMATgEsSwCs4smul74iXGOixntILdUW9XmUC6+HX0sLNAK3q71HotJqlAn" crossorigin="anonymous">
   
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css">
-
+  <!-- KaTeX JavaScript -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js" integrity="sha384-cpW21h6RZv/phavutF+AuVYrr+dA8xD9zs6FwLpaCct6O9ctzYFfFr4dgmgccOTx" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
 <meta name="generator" content="Hexo 8.1.1"></head>
-
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-        
-          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
-        
-        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+  <!-- Header -->
+  <header class="header">
+  <div class="container">
+    <div class="header-content">
+      <!-- Logo -->
+      <div class="logo">
+        <h1>HoanMeirin&#39;s Blog</h1>
       </div>
+      
+      <!-- Navigation -->
+      <nav class="nav">
+        
+          <a href="/" class="nav-link">首页</a>
+        
+          <a href="/categories/" class="nav-link">专栏</a>
+        
+          <a href="/archives/" class="nav-link">文章</a>
+        
+          <a href="/tags/" class="nav-link">标签</a>
+        
+          <a href="/about/" class="nav-link">关于</a>
+        
+      </nav>
+      
+      <!-- Search and Tools -->
+      <div class="header-tools">
+        <button class="search-btn"><i class="fas fa-search"></i></button>
+        <button class="theme-toggle"><i class="fas fa-moon"></i></button>
+        <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <nav class="nav">
+        
+          <a href="/" class="nav-link">首页</a>
+        
+          <a href="/categories/" class="nav-link">专栏</a>
+        
+          <a href="/archives/" class="nav-link">文章</a>
+        
+          <a href="/tags/" class="nav-link">标签</a>
+        
+          <a href="/about/" class="nav-link">关于</a>
+        
+      </nav>
     </div>
   </div>
 </header>
 
-      <div class="outer">
-        <section id="main">
+<script>
+function toggleMobileMenu() {
+  const mobileMenu = document.getElementById('mobileMenu');
+  mobileMenu.classList.toggle('active');
+}
+
+// 点击外部关闭菜单
+document.addEventListener('click', function(event) {
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuToggle = document.querySelector('.menu-toggle');
   
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/1970/01/01/hello-world/" class="article-date">
-  <time class="dt-published" datetime="1970-01-01T00:00:00.000Z" itemprop="datePublished">1970-01-01</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+  if (!mobileMenu.contains(event.target) && !menuToggle.contains(event.target)) {
+    mobileMenu.classList.remove('active');
+  }
+});
+</script>
+  
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">Welcome to My Blog</h1>
+        <h2 class="hero-subtitle">Sharing Knowledge &amp; Experience</h2>
+        <p class="hero-desc">Explore articles about programming, algorithms, and technology</p>
+      </div>
+      <div class="hero-visual">
+        <!-- 推荐文章大卡片 -->
         
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/1970/01/01/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/1970/01/01/hello-world/" data-id="cuidhPd1XIAjpuBzX4-ZWu-ax" data-title="Hello World" class="article-share-link"><span class="fa fa-share">Share</span></a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/1970/01/">January 1970</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/1970/01/01/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
+          <div class="featured-article-card" style="background-image: url('/images/default-bg.jpg')">
+            <div class="featured-card-overlay"></div>
+            <div class="featured-card-content">
+              <div class="featured-card-label">
+                <span class="featured-label-text">推荐阅读</span>
+              </div>
+              <h2 class="featured-card-title">kiro使用WSL终端教程</h2>
+              <div class="featured-card-meta">
+                
+                  <span class="featured-meta-item">
+                    <i class="fas fa-folder"></i> IDE
+                  </span>
+                
+                <span class="featured-meta-item">
+                  <i class="fas fa-calendar"></i> 2025-12-27
+                </span>
+              </div>
+              <a href="/2025/12/27/kiro%E4%BD%BF%E7%94%A8wsl%E7%BB%88%E7%AB%AF%E6%95%99%E7%A8%8B/" class="featured-card-btn">
+                <span>阅读文章</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+              <a href="/recommendations/" class="featured-card-btn featured-card-btn-secondary">
+                <span>更多推荐</span>
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         
       </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
+    </div>
+  </div>
+</section>
+
+<!-- Tech Tags -->
+<section class="tech-tags-section">
+  <div class="container">
+    <div class="tech-tags">
       
-      &copy; 2025 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+        <span class="tech-tag" style="background-color: #4285f4">
+          <span class="tag-icon">🧮</span>
+          算法
+        </span>
+      
+        <span class="tech-tag" style="background-color: #00599c">
+          <span class="tag-icon">💻</span>
+          C++
+        </span>
+      
+        <span class="tech-tag" style="background-color: #a8b9cc">
+          <span class="tag-icon">⚡</span>
+          C语言
+        </span>
+      
+        <span class="tech-tag" style="background-color: #ff6b6b">
+          <span class="tag-icon">📊</span>
+          数据结构
+        </span>
+      
+        <span class="tech-tag" style="background-color: #ffa726">
+          <span class="tag-icon">🏗️</span>
+          数据结构
+        </span>
+      
+        <span class="tech-tag" style="background-color: #fdd835">
+          <span class="tag-icon">🐧</span>
+          Linux
+        </span>
+      
+        <span class="tech-tag" style="background-color: #ffc107">
+          <span class="tag-icon">🧮</span>
+          数字电路
+        </span>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Category Cards -->
+<section class="category-section">
+  <div class="container">
+    <div class="category-cards">
+      
+        <div class="category-card" style="background-color: #ff6b6b">
+          <h3>数电</h3>
+          <p>从入门到入土</p>
+        </div>
+      
+        <div class="category-card" style="background-color: #4ecdc4">
+          <h3>项目合集</h3>
+          <p>经验分享</p>
+        </div>
+      
+        <div class="category-card" style="background-color: #45b7d1">
+          <h3>算法分享</h3>
+          <p>其实我不会算法</p>
+        </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- Main Layout with Sidebar -->
+<div class="index-layout">
+  <!-- Main Content -->
+  <main class="index-main">
+    <!-- Latest Posts -->
+    <section class="course-section">
+      <div class="section-header">
+        <h2>最新文章</h2>
+        <a href="/archives/" class="view-all-btn">查看全部 <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="course-grid">
+        
+          <article class="course-card">
+            <a href="/2025/12/27/kiro%E4%BD%BF%E7%94%A8wsl%E7%BB%88%E7%AB%AF%E6%95%99%E7%A8%8B/" class="course-link">
+              <div class="course-image">
+                
+                  <div class="default-cover">
+                    <i class="fas fa-file-alt"></i>
+                    <span>文章</span>
+                  </div>
+                
+              </div>
+              <div class="course-content">
+                <div class="course-meta">
+                  
+                    <span class="course-category">IDE</span>
+                  
+                  <div class="course-tags">
+                    
+                      
+                        <span class="course-tag">WSL</span>
+                      
+                        <span class="course-tag">IDE</span>
+                      
+                    
+                  </div>
+                </div>
+                <h3 class="course-title">kiro使用WSL终端教程</h3>
+                
+                  <p class="course-excerpt">None...</p>
+                
+                <div class="course-dates">
+                  <span><i class="fas fa-calendar"></i> 2025-12-27</span>
+                  
+                    <span><i class="fas fa-edit"></i> 2025-12-27</span>
+                  
+                </div>
+              </div>
+            </a>
+          </article>
+        
+          <article class="course-card">
+            <a href="/2025/12/19/%E5%8E%9F%E7%A0%81%E5%8A%A0%E6%B3%95%E5%99%A8%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%AE%BE%E8%AE%A1/" class="course-link">
+              <div class="course-image">
+                
+                  <img src="/images/adder_.png" alt="原码加法器表达式设计" />
+                
+              </div>
+              <div class="course-content">
+                <div class="course-meta">
+                  
+                    <span class="course-category">数电</span>
+                  
+                  <div class="course-tags">
+                    
+                      
+                        <span class="course-tag">数电</span>
+                      
+                    
+                  </div>
+                </div>
+                <h3 class="course-title">原码加法器表达式设计</h3>
+                
+                <div class="course-dates">
+                  <span><i class="fas fa-calendar"></i> 2025-12-19</span>
+                  
+                    <span><i class="fas fa-edit"></i> 2025-12-31</span>
+                  
+                </div>
+              </div>
+            </a>
+          </article>
+        
+      </div>
+      
+      <!-- 如果没有文章，显示示例卡片 -->
+      
+    </section>
+  </main>
+
+  <!-- Sidebar -->
+  <aside class="index-sidebar">
+    <!-- Avatar Card -->
+    <div class="sidebar-card avatar-card">
+      <div class="avatar">
+        <img src="/images/avatar.png" alt="HoanMeirin" />
+      </div>
+      <h3>HoanMeirin</h3>
+      <p>Hoan-Meirin</p>
+      <div class="social-links">
+        
+          <a target="_blank" rel="noopener" href="https://github.com/Hoan-Meirin" class="social-link">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      </div>
+    </div>
+    
+    <!-- Announcement -->
+    
+      <div class="sidebar-card announcement-card">
+        <h4><i class="fas fa-bullhorn"></i> 公告</h4>
+        <p>今天又是美好的一天</p>
+      </div>
+    
+  </aside>
+</div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2025 HoanMeirin. All rights reserved.</p>
+      <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></p>
     </div>
   </div>
 </footer>
-
+  
+  <!-- Live2D -->
+  
+    <div id="live2d-widget" style="position: fixed; bottom: 0; right: 20px; z-index: 999; pointer-events: none; overflow: visible;">
+      <canvas id="live2dcanvas" width="450" height="600"></canvas>
     </div>
-    <nav id="mobile-nav">
   
-    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+  <!-- Scripts -->
   
-</nav>
-    
-
-
-<script src="/js/jquery-3.6.4.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
 <script src="/js/script.js"></script>
 
+  
+<script src="/js/live2d-controller-working.js"></script>
 
+  
+<script src="/js/live2d-mobile.js"></script>
 
+  
+<script src="/js/live2d-hotkeys.js"></script>
 
-
-  </div>
+  
+  <!-- Live2D Scripts -->
+  
+    
+      <!-- 使用本地Live2D模型 -->
+      <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
+      <script>
+        console.log('🎭 初始化本地Live2D模型...');
+        
+        // 从localStorage获取保存的模型，或使用默认模型
+        function getCurrentModel() {
+          const saved = localStorage.getItem('live2d-current-model');
+          return saved || 'anon_2151';
+        }
+        
+        // 获取正确的模型路径
+        function getModelPath(modelName) {
+          const modelPaths = {
+            'anon_2151': '/live2d/bang/anon_2151/model.json',
+            'hina_1387': '/live2d/bang/hina_1387/model.json',
+            'kkr_265': '/live2d/bang/kkr_265/model.json',
+            'ksm_270': '/live2d/bang/ksm_270/model.json',
+            'ksm_271': '/live2d/bang/ksm_271/model.json',
+            'mzm': '/live2d/bang/mzm/model.json',
+            'nidie': '/live2d/bang/nidie/model.json',
+            'tomorin': '/live2d/bang/tomorin/model.json'
+          };
+          return modelPaths[modelName] || modelPaths['anon_2151'];
+        }
+        
+        // 加载配置文件
+        function loadConfigFile() {
+          try {
+            const saved = localStorage.getItem('live2d-config');
+            if (saved) {
+              return JSON.parse(saved);
+            }
+          } catch (e) {
+            console.warn('加载Live2D配置失败:', e);
+          }
+          return null;
+        }
+        
+        const currentModel = getCurrentModel();
+        const modelPath = getModelPath(currentModel);
+        console.log('📍 当前模型:', currentModel);
+        console.log('📍 模型路径:', modelPath);
+        
+        L2Dwidget.init({
+          "model": {
+            "jsonPath": modelPath,
+            "scale": 1
+          },
+          "display": {
+            "position": "right",
+            "width": 450,
+            "height": 600,
+            "hOffset": 0,
+            "vOffset": -60
+          },
+          "mobile": {
+            "show": true,
+            "scale": 0.5
+          },
+          "react": {
+            "opacity": 1.0,
+            "opacityOnHover": 0.2
+          },
+          "dialog": {
+            "enable": false
+          },
+          "log": false
+        });
+        
+        // 调试信息
+        console.log('📍 Live2D模型路径:', modelPath);
+        
+        // 测试模型文件是否可访问
+        fetch(modelPath)
+          .then(response => {
+            if (response.ok) {
+              console.log('✅ 模型配置文件加载成功');
+              return response.json();
+            } else {
+              console.error('❌ 模型配置文件加载失败:', response.status);
+              throw new Error('配置文件不存在');
+            }
+          })
+          .then(data => {
+            console.log('📋 模型配置:', data);
+          })
+          .catch(error => {
+            console.error('🚨 Live2D加载错误:', error);
+          });
+      </script>
+    
+  
+  
+  <!-- KaTeX Auto-render -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$', right: '$', display: true},
+          {left: '$$', right: '$$', display: false},
+          {left: '\\[', right: '\\]', display: true},
+          {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError: false
+      });
+      console.log('✅ KaTeX rendering complete');
+    });
+  </script>
 </body>
 </html>

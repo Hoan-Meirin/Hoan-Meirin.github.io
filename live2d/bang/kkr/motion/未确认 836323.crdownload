@@ -1,0 +1,20 @@
+# Live2D Animator Motion Data
+$fps=30
+
+$fadein=500
+
+$fadeout=1000
+
+$fadein:PARAM_EYE_L_OPEN=500
+$fadeout:PARAM_EYE_L_OPEN=500
+$fadein:PARAM_EYE_L_SMILE=500
+$fadeout:PARAM_EYE_L_SMILE=500
+$fadein:PARAM_EYE_R_OPEN=500
+$fadeout:PARAM_EYE_R_OPEN=500
+$fadein:PARAM_EYE_R_SMILE=500
+$fadeout:PARAM_EYE_R_SMILE=500
+$fadein:PARAM_EYE_R_DOUBLE=500
+$fadeout:PARAM_EYE_R_DOUBLE=500
+$fadein:PARAM_EYE_BALL_X=500
+$fadeout:PARAM_EYE_BALL_X=500
+$fadein:PARAM_EY
