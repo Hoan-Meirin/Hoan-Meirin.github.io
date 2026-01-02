@@ -128,7 +128,7 @@ document.addEventListener('click', function(event) {
         
           <div class="post-updated">
             <i class="fas fa-edit"></i>
-            更新于: 2025-12-31 21:52
+            更新于: 2026-01-01 11:15
           </div>
         
       </div>
@@ -138,7 +138,25 @@ document.addEventListener('click', function(event) {
     
       <!-- HTML文章：直接输出内容，让HTML渲染器处理 -->
       <div class="html-article-content">
-        
+        <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>原码加法器表达式设计</title>
+  <!-- KaTeX CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqxRb3N/JGzGciDQV0XJi5c7IqK+" crossorigin="anonymous">
+  <!-- KaTeX JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8"
+    crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+    crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+</head>
+<body>
+
 <h2>原码加法器表达式设计普通思路</h2>
 
 <p>Result of 4 bits calculation \( A + B \):</p>
@@ -227,71 +245,24 @@ B - |A| \text{ or } -(|A| - B) & \text{sign}(A) = 1 \text{ and } \text{sign}(B) 
 
 <p>对于借位信号，由于我们前面的要求是被减数大于减数，故而借位始终是成功的，由此得到我们的真值表：</p>
 
-<table style="border-collapse: collapse; margin: 1rem 0; width: 100%;">
-<tr style="border: 1px solid #ddd;">
-<th style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">X<sub>i</sub></th>
-<th style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">Y<sub>i</sub></th>
-<th style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">B<sub>i</sub></th>
-<th style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">Z<sub>o</sub></th>
-<th style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">B<sub>o</sub></th>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">0</td>
-</tr>
-<tr style="border: 1px solid #ddd;">
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-<td style="border: 1px solid #ddd; padding: 0.5rem; text-align: center;">1</td>
-</tr>
-</table>
+<p>（真值表略）</p>
+
+\[
+\begin{array}{|c|c|c|c|c|}
+\hline
+X_i & Y_i & B_i & Z_o & B_o \\
+\hline
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 \\
+1 & 0 & 0 & 1 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 1 & 1 & 1 & 1 \\
+\hline
+\end{array}
+\]
 
 <p>依据真值表，显然有：</p>
 
@@ -304,6 +275,8 @@ B_o &= \bar{X_i}B_i + \bar{X_i}Y_i + Y_iB_i
 
 <p>为了实现满足要求的减法器，我们还需要确定被减数和减数，以及是否需要取相反数，其实现较为简单，此处不再赘述。</p>
 
+</body>
+</html>
       </div>
     
     
@@ -673,129 +646,21 @@ B_o &= \bar{X_i}B_i + \bar{X_i}Y_i + Y_iB_i
   <footer class="footer">
   <div class="container">
     <div class="footer-content">
-      <p>&copy; 2025 HoanMeirin. All rights reserved.</p>
+      <p>&copy; 2026 HoanMeirin. All rights reserved.</p>
       <p>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></p>
     </div>
   </div>
 </footer>
-  
-  <!-- Live2D -->
-  
-    <div id="live2d-widget" style="position: fixed; bottom: 0; right: 20px; z-index: 999; pointer-events: none; overflow: visible;">
-      <canvas id="live2dcanvas" width="450" height="600"></canvas>
-    </div>
-  
   
   <!-- Scripts -->
   
 <script src="/js/script.js"></script>
 
   
-<script src="/js/live2d-controller-working.js"></script>
+  <!-- Control Panel -->
+  
+<script src="/js/control-panel.js"></script>
 
-  
-<script src="/js/live2d-mobile.js"></script>
-
-  
-<script src="/js/live2d-hotkeys.js"></script>
-
-  
-  <!-- Live2D Scripts -->
-  
-    
-      <!-- 使用本地Live2D模型 -->
-      <script src="https://cdn.jsdelivr.net/npm/live2d-widget@3.1.4/lib/L2Dwidget.min.js"></script>
-      <script>
-        console.log('🎭 初始化本地Live2D模型...');
-        
-        // 从localStorage获取保存的模型，或使用默认模型
-        function getCurrentModel() {
-          const saved = localStorage.getItem('live2d-current-model');
-          return saved || 'anon_2151';
-        }
-        
-        // 获取正确的模型路径
-        function getModelPath(modelName) {
-          const modelPaths = {
-            'anon_2151': '/live2d/bang/anon_2151/model.json',
-            'hina_1387': '/live2d/bang/hina_1387/model.json',
-            'kkr_265': '/live2d/bang/kkr_265/model.json',
-            'ksm_270': '/live2d/bang/ksm_270/model.json',
-            'ksm_271': '/live2d/bang/ksm_271/model.json',
-            'mzm': '/live2d/bang/mzm/model.json',
-            'nidie': '/live2d/bang/nidie/model.json',
-            'tomorin': '/live2d/bang/tomorin/model.json'
-          };
-          return modelPaths[modelName] || modelPaths['anon_2151'];
-        }
-        
-        // 加载配置文件
-        function loadConfigFile() {
-          try {
-            const saved = localStorage.getItem('live2d-config');
-            if (saved) {
-              return JSON.parse(saved);
-            }
-          } catch (e) {
-            console.warn('加载Live2D配置失败:', e);
-          }
-          return null;
-        }
-        
-        const currentModel = getCurrentModel();
-        const modelPath = getModelPath(currentModel);
-        console.log('📍 当前模型:', currentModel);
-        console.log('📍 模型路径:', modelPath);
-        
-        L2Dwidget.init({
-          "model": {
-            "jsonPath": modelPath,
-            "scale": 1
-          },
-          "display": {
-            "position": "right",
-            "width": 450,
-            "height": 600,
-            "hOffset": 0,
-            "vOffset": -60
-          },
-          "mobile": {
-            "show": true,
-            "scale": 0.5
-          },
-          "react": {
-            "opacity": 1.0,
-            "opacityOnHover": 0.2
-          },
-          "dialog": {
-            "enable": false
-          },
-          "log": false
-        });
-        
-        // 调试信息
-        console.log('📍 Live2D模型路径:', modelPath);
-        
-        // 测试模型文件是否可访问
-        fetch(modelPath)
-          .then(response => {
-            if (response.ok) {
-              console.log('✅ 模型配置文件加载成功');
-              return response.json();
-            } else {
-              console.error('❌ 模型配置文件加载失败:', response.status);
-              throw new Error('配置文件不存在');
-            }
-          })
-          .then(data => {
-            console.log('📋 模型配置:', data);
-          })
-          .catch(error => {
-            console.error('🚨 Live2D加载错误:', error);
-          });
-      </script>
-    
-  
   
   <!-- KaTeX Auto-render -->
   <script>
@@ -812,5 +677,25 @@ B_o &= \bar{X_i}B_i + \bar{X_i}Y_i + Y_iB_i
       console.log('✅ KaTeX rendering complete');
     });
   </script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>
+(function() {
+  const modelMap = {
+    'anon_2151': '/live2d/bang/anon_2151/model.json',
+    'hina_1387': '/live2d/bang/hina_1387/model.json',
+    'kkr_265': '/live2d/bang/kkr_265/model.json',
+    'ksm_270': '/live2d/bang/ksm_270/model.json',
+    'ksm_271': '/live2d/bang/ksm_271/model.json',
+    'mzm': '/live2d/bang/mzm/model.json',
+    'nidie': '/live2d/bang/nidie/model.json',
+    'tomorin': '/live2d/bang/tomorin/model.json'
+  };
+  const savedModel = localStorage.getItem('live2d-current-model');
+  const config = {"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/anon_2151.model.json"},"display":{"position":"right","width":450,"height":900,"hOffset":0,"vOffset":-120},"mobile":{"show":true,"scale":0.5},"react":{"opacity":1,"opacityOnHover":0.2}};
+  if (savedModel && modelMap[savedModel]) {
+    config.model.jsonPath = modelMap[savedModel];
+    console.log('📦 从localStorage应用模型:', savedModel);
+  }
+  L2Dwidget.init(config);
+})();
+      </script></body>
 </html>
